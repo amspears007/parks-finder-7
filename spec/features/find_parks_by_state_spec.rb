@@ -14,9 +14,6 @@ RSpec.describe "State Park Search Page" do
     expect(page).to have_content("Description")
 
     expect(page).to have_content("Direction Info:")
-
-
-    
   end
 end
 # As a user,
