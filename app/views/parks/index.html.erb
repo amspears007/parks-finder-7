@@ -1,0 +1,16 @@
+<h1> Parks Index Page </h1>
+
+<h3>Park Total: <%= @parks[:total] %></h3>
+<ol>
+<% @parks[:data]. each do |park| %>
+<li><b>Full Name: <%= park[:fullName] %></b></li>
+<p>Description: <%= park[:description] %></p>
+<p>Direction Info: <%= park[:directionsInfo] %></p>
+
+<p>Standard Operating Hours: <%= park[:operatingHours][0][:standardHours].to_a.to_sentence %></p>
+
+
+
+
+<% end %>
+</ol>

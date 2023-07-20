@@ -6,16 +6,17 @@ RSpec.describe "State Park Search Page" do
 
     select "Tennessee", from: :state
     click_on "Find Parks"
+    save_and_open_page
     expect(current_path).to eq(parks_path) 
     expect(page).to have_content("Park Total: 15")
-    expect(page).to have_content("Name: Andrew Johnson National Historic Site")
-    expect(page).to have_content("Operating Hours")
+    expect(page).to have_content("Full Name: Andrew Johnson National Historic Site")
+    expect(page).to have_content("Standard Operating Hours:")
     expect(page).to have_content("Description")
 
     expect(page).to have_content("Direction Info:")
 
 
-
+    
   end
 end
 # As a user,
@@ -28,4 +29,3 @@ end
 # - description
 # - direction info
 # - standard hours for operation
-```

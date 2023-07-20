@@ -6,9 +6,9 @@ class ParksController < ApplicationController
     faraday.headers["X-Api-Key"] = ENV["X-Api-Key"]
   end
   
-  response = conn.get("/api/v1/parks?parkCode=&stateCode=#{state}&limit=10")
-  json = JSON.parse(response.body, symbolize_names: true)
-  require 'pry'; binding.pry
+  response = conn.get("/api/v1/parks?parkCode=&stateCode=#{state}")
+  @parks = JSON.parse(response.body, symbolize_names: true)
+  # require 'pry'; binding.pry
 
   end
 end
